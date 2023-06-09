@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Recuperación de Contraseña</title>
+  <style>
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    
+    .input-field {
+      margin-bottom: 20px;
+    }
+    
+    .input-field label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    
+    .input-field input {
+      padding: 5px;
+    }
+    
+    .submit-btn {
+      padding: 10px 20px;
+      background-color: #6B2848;
+      color: #FFF;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="input-field">
+      <label for="password">Nueva Contraseña:</label>
+      <input type="password" id="password" minlength="8" maxlength="12" pattern="[a-zA-Z0-9]+" required>
+    </div>
+    <div class="input-field">
+      <label for="confirm-password">Confirmar Contraseña:</label>
+      <input type="password" id="confirm-password" minlength="8" maxlength="12" pattern="[a-zA-Z0-9]+" required>
+    </div>
+    <button class="submit-btn" onclick="submitForm()">Confirmar</button>
+  </div>
+
+  <script>
+    function submitForm() {
+      var password = document.getElementById('password').value;
+      var confirmPassword = document.getElementById('confirm-password').value;
+      
+      if (password === confirmPassword) {
+        // Realizar la lógica para guardar la nueva contraseña
+        alert('Contraseña actualizada correctamente.');
+      } else {
+        alert('Las contraseñas no coinciden. Por favor, inténtalo de nuevo.');
+      }
+    }
+  </script>
+</body>
+</html>
